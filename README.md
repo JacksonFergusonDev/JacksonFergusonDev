@@ -2,89 +2,102 @@
 
 **Astrophysics and Systems Engineering** | *University of Victoria*
 
-My work focuses on the interface between deterministic software systems and stochastic physical hardware. I design and validate recursive toolchains in which logistics software, power infrastructure, and custom instrumentation are developed together to reduce uncontrolled variables in physical experiments.
+I build measurement systems that combine hardware and software to collect reliable data from physical experiments. My projects focus on reducing sources of error and uncertainty by developing custom instrumentation, power supplies, and data acquisition tools together as integrated systems.
 
-My current work centers on spectral characterization of non-linear analog circuits and the design of deterministic logistics systems for hardware fabrication and validation.
+Current projects include analyzing non-linear behavior in analog audio circuits and building tools to manage electronics inventory and component procurement.
 
 ---
 
-## Contact + collaboration
+## Contact + Collaboration
 - Email: jackson.ferguson0@gmail.com
 - LinkedIn: https://www.linkedin.com/in/jackson--ferguson
-- Open to:  Instrumentation and DAQ development, analog and mixed-signal analysis, lab automation, software-defined measurement systems, and research collaborations spanning software, electronics, and physical experimentation.
-
+- Open to: Instrumentation development, data acquisition systems, circuit measurement and characterization, lab automation, and research collaborations involving hardware, software, and experimental validation.
 
 ---
 
 ## Currently Working On
 
-* **Impulse Response Deconvolution:** Implementing Farina’s (2000) Exponential Sine Sweep (ESS) method to mathematically separate linear transfer functions from harmonic distortion products. The goal is to generate Bode plots with explicit linear/harmonic separation. *(Active in [`systems-audio-lab`](https://github.com/jacksonfergusondev/systems-audio-lab))*
-* **Context-Aware Parsing Architecture:** Migrating the [`star-ground`](https://github.com/jacksonfergusondev/star-ground) logistics engine from regex to Context-Free Grammars (CFG). Current initiatives include implementing topology inference (clustering components to detect "Fuzz" vs. "Delay" circuits) and integrating real-time Octopart pricing APIs.
+* **Circuit Frequency Response Analysis:** Implementing the Exponential Sine Sweep method to measure how audio circuits respond across different frequencies and separate linear behavior from distortion. Working toward automated generation of frequency response plots. *(Active in [`systems-audio-lab`](https://github.com/jacksonfergusondev/systems-audio-lab))*
+* **Improved Bill of Materials Parsing:** Upgrading the [`star-ground`](https://github.com/jacksonfergusondev/star-ground) component database to better handle different PDF formats and extract pricing information automatically from supplier APIs.
 
 ---
 
-## Systems Engineering and Instrumentation
+## Hardware and Instrumentation Projects
 
 ### [systems-audio-lab](https://github.com/jacksonfergusondev/systems-audio-lab)
 
-**Status:** *Hardware Validated, Analysis In Progress*
+**Status:** *Hardware Complete, Analysis Software In Development*
 
 <img src="https://raw.githubusercontent.com/JacksonFergusonDev/systems-audio-lab/refs/heads/main/docs/figures/fig_analysis_topology.svg" width="59%" alt="Analysis topology"> <img src="https://raw.githubusercontent.com/JacksonFergusonDev/systems-audio-lab/refs/heads/main/oscilloscope-rp2040/schematics/exports/signal_conditioning_universal-compact.svg" width="35%" alt="Universal RP2040 Analog Interface">
 
-A systems engineering monograph documenting the design, fabrication, and empirical validation of an analog signal chain. The project required the development of four interdependent subsystems spanning software architecture, power regulation, instrumentation, and signal analysis.
+A complete electronics workbench built to measure and analyze audio circuits. Rather than buying test equipment, I built four interconnected systems from scratch: a logistics tool for parts management, a clean power supply, a guitar overdrive pedal to test, and a custom oscilloscope to capture the data. The project documents the full process from component ordering to frequency response analysis.
 
-* **Analog Front-End Design:** Designed a custom multi-stage signal conditioning interface to bridge high-impedance instrument signals with low-voltage RP2040 ADC inputs.
+* **RP2040 Oscilloscope (Primary Instrument):** Built a USB oscilloscope and spectrum analyzer around the RP2040 microcontroller with a custom analog front-end circuit:
+  * Four-stage signal conditioning: current limiting for protection, AC coupling (3 Hz cutoff), switchable voltage dividers for different input ranges, and diode clamps to prevent overvoltage
+  * Store-and-forward firmware architecture separates high-speed sampling from USB transmission to avoid data loss
+  * Measured noise floor of 1.3 mV RMS, calibrated sampling rate to 97.8 kSps using 60 Hz mains frequency as reference
+  * Python analysis tools for FFT, waveform rendering, and automated transfer function measurement
+  * Supports line-level audio, high-impedance instrument signals, and 0-5V sensor inputs via jumper configuration
 
-  * **Topology:** Implemented a four-stage architecture consisting of current-limited input protection, AC coupling with a cutoff frequency of approximately 3.3 Hz, switched-reference attenuation for DC and audio mode selection, and diode clamping.
-  * **Versatility:** Supports line-level, high-impedance instrument-level, and 0 to 5 V sensor inputs via jumper configuration.
-* **Instrumentation Architecture:** Designed a store-and-forward data acquisition system.
+* **Linear Power Supply:** Assembled a 9V voltage regulator based on the L7809 chip to provide clean DC power for the test circuit:
+  * Added input/output capacitors to filter ripple from cheap wall adapters
+  * Installed heatsink and ventilation to handle thermal dissipation under load
+  * Reverse polarity protection using Schottky diode
+  * Low-noise design prevents power supply artifacts from contaminating measurements
 
-  * **Mechanism:** Sampling is decoupled from transmission through two capture modes. Burst mode enables high-speed, buffer-limited transient capture, while continuous mode supports long-duration monitoring.
-  * **Characterization:** Measured system noise floor below 1.3 mV RMS and calibrated the sampling rate to 97.8 kSps using mains-frequency spectral reference.
-* **Power Infrastructure:** Designed and fabricated a linear power supply based on the L7809 topology. Modified the reference design with parallel high-frequency bypass capacitors at input and output stages to suppress ripple and ensure a stable noise floor for analog measurements.
+* **Red Llama Overdrive (Device Under Test):** Built a guitar overdrive pedal using CD4049 CMOS inverter chips biased into their linear region to generate soft-clipping distortion. This circuit serves as the test subject for frequency response and harmonic distortion analysis.
+
+* **Component Management:** Developed alongside the star-ground logistics system to track parts inventory and ensure all components were ordered correctly before starting assembly.
+
+The complete workflow—from BOM generation to spectral analysis—is documented in detail, including schematics, firmware source code, and Jupyter notebooks showing the measurement and analysis process.
 
 ---
 
 ### [star-ground](https://github.com/jacksonfergusondev/star-ground)
 
-**Logistics and Procurement Engine**
+**Electronics Inventory Management Tool**
 
 <img src="https://github.com/JacksonFergusonDev/star-ground/blob/main/assets/demo.gif?raw=true" width="45%" alt="Star Ground Demo">
 
-A logistics engine designed to serve as a single source of truth for electronics inventory management. The system addresses common sources of nondeterminism in hardware fabrication by converting heterogeneous Bill of Materials formats into structured, validated data.
+A database system for tracking electronics components and extracting parts lists from supplier PDFs. Designed to reduce errors in component ordering and maintain accurate inventory counts.
 
-* **Architecture:** Uses deterministic parsing techniques rather than probabilistic models. PDF ingestion is performed through visual layout extraction with `pdfplumber` and regex-based fallback logic to eliminate ambiguity.
-* **Inventory Management:** Implements heuristic safety-stock calculations based on component cost, failure risk, and replacement latency.
-* **Reliability:** Employs snapshot-based regression testing against a curated reference library to prevent unintended changes in parsing behavior.
+* **PDF Processing:** Uses visual layout detection (pdfplumber) and pattern matching to extract component data from bills of materials in different formats. Deterministic parsing approach ensures consistent results rather than relying on probabilistic interpretation.
+
+* **Inventory Tracking:** Calculates suggested stock levels based on component cost, likelihood of failure during assembly, and supplier lead times.
+
+* **Testing:** Uses snapshot-based regression tests with a library of real-world PDFs to catch unintended changes in parsing behavior.
 
 ---
 
-## Computational Physics
+## Data Analysis Projects
 
 ### [data-science-portfolio](https://github.com/jacksonfergusondev/data-science-portfolio)
 
-**Statistical Inference and Modeling**
+**Computational Physics and Statistical Modeling**
 
 <img src="https://raw.githubusercontent.com/JacksonFergusonDev/data-science-portfolio/refs/heads/main/computational_modeling/figures/particle_attenuation.svg" width="45%" alt="Vectorized Particle Transport"> <img src="https://raw.githubusercontent.com/JacksonFergusonDev/data-science-portfolio/refs/heads/main/astrophysics/figures/gmm_redshift_distribution.svg" width="45%" alt="Gaussian Mixture Redshift Model">
 
-A collection of computational pipelines applying statistical inference techniques to extract physical parameters from noisy observational data.
+Applied statistical methods to extract physical measurements from noisy astronomical and experimental data.
 
-* **Galaxy Cluster Dynamics (ACO 2670):** Estimated a mass-to-light ratio of 291 ± 60 solar units using redshift-space distortion analysis and the virial theorem, providing kinematic evidence for dark matter dominance.
-* **Atmospheric Reconstruction:** Solved coupled hydrostatic equilibrium and radiative transfer equations to reconstruct thermodynamic profiles of high-gravity exoplanet atmospheres.
-* **Stochastic Simulation:** Validated Beer–Lambert attenuation and variance scaling behavior using discrete Monte Carlo particle transport models.
+* **Galaxy Cluster Mass Estimation (ACO 2670):** Used velocity measurements of galaxies in a cluster to estimate total mass through the virial theorem, finding a mass-to-light ratio of 291 ± 60 (solar units)—evidence that most of the cluster's mass is dark matter rather than visible stars.
+
+* **Exoplanet Atmosphere Modeling:** Solved equations for atmospheric pressure and temperature profiles to model the atmospheres of high-gravity exoplanets.
+
+* **Monte Carlo Particle Simulation:** Validated theoretical attenuation equations by simulating individual particle interactions and confirming expected statistical behavior.
 
 ---
 
-## Reliability Infrastructure
+## Software Tools
 
 ### [git-pulsar](https://github.com/jacksonfergusondev/git-pulsar)
 
-**Distributed Backup Daemon**
+**Automatic Git Backup Service**
 
-A background service designed to reduce data loss in distributed academic and development environments.
+A background daemon that automatically saves work-in-progress by creating git commits without affecting your working files or staging area. Designed to prevent data loss when working across multiple computers.
 
-* **Mechanism:** Creates shadow commits by writing directly to the git object database using low-level plumbing commands, preserving work without modifying the working tree or staging index.
-* **Topology:** Maintains a zipper-style commit graph to track work across multiple machines and supports eventual consistency through octopus merges.
+* Uses git's internal object database to store snapshots
+* Maintains a separate commit history that can be merged with main work when needed
+* Supports synchronization across machines through merge commits
 
 ---
 
