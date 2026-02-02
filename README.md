@@ -93,6 +93,15 @@ Applied statistical methods to extract physical measurements from noisy astronom
 
 **Automatic Git Backup Service**
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif">
+  <img alt="Pulsar demo"
+       src="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif"
+       width="380"
+       style="max-width:100%; height:auto;">
+</picture>
+
 A background daemon that automatically saves work-in-progress by creating git commits without affecting your working files or staging area. Designed to prevent data loss when working across multiple computers.
 
 * Uses git's internal object database to store snapshots
