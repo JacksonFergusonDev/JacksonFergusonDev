@@ -1,32 +1,25 @@
 # Jackson Ferguson
 
-**Astrophysics and Systems Engineering** | *University of Victoria*
+**Computational Astrophysics and Systems Engineering** | *University of Victoria*
 
-I build measurement systems that combine hardware and software to collect reliable data from physical experiments. My projects focus on reducing sources of error and uncertainty by developing custom instrumentation, power supplies, and data acquisition tools together as integrated systems.
+I apply the rigor of the scientific method to software engineering. My work focuses on **Vertical Integration** and **Entropy Reduction**, building systems where software precision meets hardware reality.
 
-Current projects include analyzing non-linear behavior in analog audio circuits and building tools to manage electronics inventory and component procurement.
+Whether analyzing the spectral composition of a galaxy cluster or managing a physical supply chain, my goal is the same: to build deterministic tools that extract **Signal from Noise**.
 
 ---
 
 ## Contact + Collaboration
-- Email: jackson.ferguson0@gmail.com
-- LinkedIn: https://www.linkedin.com/in/jackson--ferguson
-- Open to: Instrumentation development, data acquisition systems, circuit measurement and characterization, lab automation, and research collaborations involving hardware, software, and experimental validation.
+- Email: [jackson.ferguson0@gmail.com](mailto:jackson.ferguson0@gmail.com)
+- LinkedIn: [jackson--ferguson](https://www.linkedin.com/in/jackson--ferguson)
+- Open to: Instrumentation development, data acquisition systems, circuit measurement and characterization, lab automation, and scientific Python development
+- Interests: Research collaborations involving hardware, software, and experimental validation
 
 ---
 
-## Currently Working On
+## Featured Engineering Systems
 
-* **Circuit Frequency Response Analysis:** Implementing the Exponential Sine Sweep method to measure how audio circuits respond across different frequencies and separate linear behavior from distortion. Working toward automated generation of frequency response plots. *(Active in [`systems-audio-lab`](https://github.com/jacksonfergusondev/systems-audio-lab))*
-* **Improved Bill of Materials Parsing:** Upgrading the [`star-ground`](https://github.com/jacksonfergusondev/star-ground) component database to better handle different PDF formats and extract pricing information automatically from supplier APIs.
-
----
-
-## Hardware and Instrumentation Projects
-
-### [systems-audio-lab](https://github.com/jacksonfergusondev/systems-audio-lab)
-
-**Status:** *Hardware Complete, Analysis Software In Development*
+### 1. [systems-audio-lab](https://github.com/jacksonfergusondev/systems-audio-lab)
+**A Vertically Integrated Audio Analysis Platform**
 
 <img src="https://raw.githubusercontent.com/JacksonFergusonDev/systems-audio-lab/refs/heads/main/docs/figures/fig_analysis_topology.svg" width="59%" alt="Analysis topology"> <img src="https://raw.githubusercontent.com/JacksonFergusonDev/systems-audio-lab/refs/heads/main/oscilloscope-rp2040/schematics/exports/signal_conditioning_universal-compact.svg" width="35%" alt="Universal RP2040 Analog Interface">
 
@@ -39,11 +32,7 @@ A complete electronics workbench built to measure and analyze audio circuits. Ra
   * Python analysis tools for FFT, waveform rendering, and automated transfer function measurement
   * Supports line-level audio, high-impedance instrument signals, and 0-5V sensor inputs via jumper configuration
 
-* **Linear Power Supply:** Assembled a 9V voltage regulator based on the L7809 chip to provide clean DC power for the test circuit:
-  * Added input/output capacitors to filter ripple from cheap wall adapters
-  * Installed heatsink and ventilation to handle thermal dissipation under load
-  * Reverse polarity protection using Schottky diode
-  * Low-noise design prevents power supply artifacts from contaminating measurements
+* **Linear Power Supply:** Assembled a 9V voltage regulator based on the L7809 chip to provide clean DC power for the test circuit.
 
 * **Red Llama Overdrive (Device Under Test):** Built a guitar overdrive pedal using CD4049 CMOS inverter chips biased into their linear region to generate soft-clipping distortion. This circuit serves as the test subject for frequency response and harmonic distortion analysis.
 
@@ -53,23 +42,39 @@ The complete workflow—from BOM generation to spectral analysis—is documented
 
 ---
 
-### [star-ground](https://github.com/jacksonfergusondev/star-ground)
-
-**Electronics Inventory Management Tool**
+### 2. [star-ground](https://github.com/jacksonfergusondev/star-ground)
+**A Deterministic Dependency Manager for Physical Hardware**
 
 <img src="https://github.com/JacksonFergusonDev/star-ground/blob/main/assets/demo.gif?raw=true" width="45%" alt="Star Ground Demo">
 
-A database system for tracking electronics components and extracting parts lists from supplier PDFs. Designed to reduce errors in component ordering and maintain accurate inventory counts.
+In software, `uv sync` resolves dependencies instantly. In hardware, a missing resistor is a blocking failure. This tool treats physical inventory as a strict dependency tree, reducing the **Logistical Entropy** of manufacturing.
 
-* **PDF Processing:** Uses visual layout detection (pdfplumber) and pattern matching to extract component data from bills of materials in different formats. Deterministic parsing approach ensures consistent results rather than relying on probabilistic interpretation.
-
-* **Inventory Tracking:** Calculates suggested stock levels based on component cost, likelihood of failure during assembly, and supplier lead times.
-
-* **Testing:** Uses snapshot-based regression tests with a library of real-world PDFs to catch unintended changes in parsing behavior.
+* **Invariants over Inference:** Rejects probabilistic parsing (LLMs) in favor of a Hybrid Spatial/Regex engine to ensure 100% data integrity.
+* **Yield Management:** Implements "Nerd Economics" (heuristic buffering) to transform procurement from simple arithmetic into a risk-management strategy.
+* **Reliability:** Verified via Snapshot Regression testing against a *Golden Master* library of PDFs.
 
 ---
 
-## Data Analysis Projects
+### 3. [git-pulsar](https://github.com/jacksonfergusondev/git-pulsar)
+**Fault-Tolerant State Capture for Distributed Development**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif">
+  <img alt="Pulsar demo"
+       src="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif"
+       width="380"
+       style="max-width:100%; height:auto;">
+</picture>
+
+Standard git commits conflate *saving work* (High Noise) with *publishing features* (High Signal). Pulsar decouples them by creating an immutable, out-of-band state graph.
+
+* **Zero-Interference:** Manipulates the git object database directly (`write-tree`) via a temporary index, guaranteeing it never locks or corrupts the user's active staging area.
+* **Distributed Reconciliation:** Merges work from multiple machines (Laptop/Desktop) using a "Zipper Graph" to prevent split-brain history.
+
+---
+
+## Data Analysis & Physics
 
 ### [data-science-portfolio](https://github.com/jacksonfergusondev/data-science-portfolio)
 
@@ -87,39 +92,16 @@ Applied statistical methods to extract physical measurements from noisy astronom
 
 ---
 
-## Software Tools
+## 🛠 Technical Stack
 
-### [git-pulsar](https://github.com/jacksonfergusondev/git-pulsar)
-
-**Automatic Git Backup Service**
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_dark.gif">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif">
-  <img alt="Pulsar demo"
-       src="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_light.gif"
-       width="380"
-       style="max-width:100%; height:auto;">
-</picture>
-
-A background daemon that automatically saves work-in-progress by creating git commits without affecting your working files or staging area. Designed to prevent data loss when working across multiple computers.
-
-* Uses git's internal object database to store snapshots
-* Maintains a separate commit history that can be merged with main work when needed
-* Supports synchronization across machines through merge commits
-
----
-
-## Technical Stack
-
-| Domain             | Technologies                                                 |
-| :----------------- | :----------------------------------------------------------- |
-| **Analysis**       | Python scientific stack, NumPy, SciPy, Pandas, Astropy, FFT  |
-| **Firmware**       | RP2040 architecture, MicroPython                             |
-| **Interfaces**     | Streamlit, CLI design                                        |
-| **Circuit Design** | Discrete analog synthesis, Python-based schematic generation |
-| **DevOps**         | Docker, GitHub Actions, pre-commit hooks, `uv`               |
-| **Documentation**  | LaTeX, BibTeX                                                |
+| Domain | Toolkit |
+| :--- | :--- |
+| **Analysis** | Python Scientific Stack (NumPy, SciPy, Pandas), FFT, Signal Processing |
+| **Firmware** | MicroPython |
+| **Interfaces** | Streamlit, CLI design |
+| **DevOps** | Docker, GitHub Actions, `uv` (Dependency Locking) |
+| **Circuit Design** | Python-based schematic generation |
+| **Documentation** | LaTeX, BibTeX |
 
 ---
 
