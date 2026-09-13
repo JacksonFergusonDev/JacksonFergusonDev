@@ -2,25 +2,25 @@
 
 # Jackson Ferguson
 
-Software engineer. I build systems that extract signal from noise — in software, hardware, and data.
+I build systems that extract signal from noise — in software, hardware, and data.
 
 <a href="https://github.com/JacksonFergusonDev/protostar" title="Protostar">
   <img src="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/favicon.svg" width="80" style="max-width:100%; height:auto;" alt="Protostar logo">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/jacksonfergusondev/focal" title="Focal">
-  <img src="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/logo.svg" width="80" style="max-width:100%; height:auto;" alt="Focal logo">
+<a href="https://github.com/JacksonFergusonDev/star-ground" title="Star-Ground">
+  <img src="https://raw.githubusercontent.com/JacksonFergusonDev/star-ground/refs/heads/main/assets/logo.svg" width="80" style="max-width:100%; height:auto;" alt="Star-Ground logo">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/jacksonfergusondev/git-pulsar" title="Git-Pulsar">
   <img src="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/assets/logo.svg" width="80" style="max-width:100%; height:auto;" alt="Git-Pulsar logo">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/JacksonFergusonDev/star-ground" title="Star-Ground">
-  <img src="https://raw.githubusercontent.com/JacksonFergusonDev/star-ground/refs/heads/main/assets/logo.svg" width="80" style="max-width:100%; height:auto;" alt="Star-Ground logo">
+<a href="https://github.com/jacksonfergusondev/focal" title="Focal">
+  <img src="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/logo.svg" width="80" style="max-width:100%; height:auto;" alt="Focal logo">
 </a>
 
-> Physics & Astronomy Alum (UVic) • Available for Systems Engineering roles
+> Physics & Astronomy Alum (UVic)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A0A0A?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jackson--ferguson/)
 [![Email](https://img.shields.io/badge/Email-0A0A0A?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jackson.ferguson0@gmail.com)
@@ -51,7 +51,7 @@ Software engineer. I build systems that extract signal from noise — in softwar
 [![Release](https://img.shields.io/github/actions/workflow/status/jacksonfergusondev/protostar/release.yml?color=22d3ee&labelColor=0A0A0A&label=release)](https://github.com/jacksonfergusondev/protostar/actions/workflows/release.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/JacksonFergusonDev/protostar?color=22d3ee&labelColor=0A0A0A&logo=codecov&logoColor=white)](https://codecov.io/gh/JacksonFergusonDev/protostar)
 [![Python](https://img.shields.io/badge/python-3.12+-22d3ee?labelColor=0A0A0A&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![Documentation](https://img.shields.io/badge/docs-ReadTheDocs-22d3ee?labelColor=0A0A0A&logo=readthedocs&logoColor=white)](https://protostar.readthedocs.io/en/stable/)
+[![Documentation](https://img.shields.io/readthedocs/protostar/stable?color=22d3ee&labelColor=0A0A0A&logo=readthedocs&logoColor=white)](https://protostar.readthedocs.io/stable/)
 
 <img src="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/demo_headless.gif" width="70%" alt="Protostar Headless Demo">
 
@@ -108,38 +108,6 @@ The complete workflow—from BOM generation to spectral analysis—is documented
 
 <div align="center">
 
-<a href="https://github.com/JacksonFergusonDev/focal">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg">
-    <img alt="Focal Logo"
-         src="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg"
-         width="250"
-         style="max-width:100%; height:auto;">
-  </picture>
-</a>
-
-**CLI tool for instantly extracting token-efficient codebase context for LLM workflows.**
-
-[![Version](https://img.shields.io/github/v/release/JacksonFergusonDev/focal?style=flat-square&labelColor=0A0A0A&color=fb923c)](https://github.com/JacksonFergusonDev/focal/releases)
-[![CI](https://img.shields.io/github/actions/workflow/status/JacksonFergusonDev/focal/ci.yml?style=flat-square&color=fb923c&labelColor=0A0A0A&label=CI)](https://github.com/JacksonFergusonDev/focal/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10+-fb923c?style=flat-square&labelColor=0A0A0A&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![Ruff](https://img.shields.io/badge/style-ruff-fb923c?style=flat-square&labelColor=0A0A0A)](https://github.com/astral-sh/ruff)
-[![Mypy](https://img.shields.io/badge/mypy-checked-fb923c?style=flat-square&labelColor=0A0A0A)](https://mypy-lang.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-fb923c?style=flat-square&labelColor=0A0A0A&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-
-</div>
-
-Gathering context for an LLM usually means copying and pasting multiple files, scraping git diffs, and manually formatting terminal outputs. Focal automates this boilerplate repository extraction, feeding AI assistants exactly what they need to understand codebases, PR intents, or external documentation.
-
-* **Pipeline Native:** Core routing and file manipulation are handled by fast UNIX utilities (`rg`, `fd`, `fzf`, `bat`), strictly reserving the Python backend for complex data transformations like parsing Jupyter Notebook ASTs, resolving Git commit topologies, or stripping HTML structure.
-* **High Signal, Low Noise:** Aggressively filters out binary blobs, lockfiles, minified assets, and DOM noise using strict heuristic sets to maximize LLM attention window efficiency.
-* **Clipboard-First Execution:** Outputs are automatically calculated for token length and piped directly to your system's native clipboard manager (`pbcopy`, `wl-copy`, `xclip`). No intermediate files; just run the command and paste.
-
----
-
-<div align="center">
-
 <a href="https://github.com/JacksonFergusonDev/star-ground">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/star-ground/refs/heads/main/assets/readme-dark.svg">
@@ -159,7 +127,7 @@ Gathering context for an LLM usually means copying and pasting multiple files, s
 [![Docker](https://github.com/JacksonFergusonDev/star-ground/actions/workflows/docker-publish.yml/badge.svg?style=flat-square)](https://github.com/JacksonFergusonDev/star-ground/actions/workflows/docker-publish.yml)
 [![Ruff](https://img.shields.io/badge/style-ruff-4ade80?style=flat-square&labelColor=0A0A0A)](https://github.com/astral-sh/ruff)
 [![Mypy](https://img.shields.io/badge/mypy-checked-4ade80?style=flat-square&labelColor=0A0A0A)](https://mypy-lang.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-4ade80?style=flat-square&labelColor=0A0A0A&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json&style=flat-square&labelColor=0A0A0A&color=4ade80)](https://github.com/j178/prek)
 
 <img src="https://github.com/JacksonFergusonDev/star-ground/blob/main/assets/demo.gif?raw=true" width="70%" alt="Star Ground Demo">
 
@@ -193,7 +161,7 @@ In software, `uv sync` resolves dependencies instantly. In hardware, a missing r
 [![Release](https://img.shields.io/github/actions/workflow/status/JacksonFergusonDev/git-pulsar/release.yml?style=flat-square&color=a78bfa&labelColor=0A0A0A&label=release)](https://github.com/JacksonFergusonDev/git-pulsar/actions/workflows/release.yml)
 [![Python](https://img.shields.io/badge/python-3.12+-a78bfa?style=flat-square&labelColor=0A0A0A&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![Uses Rich](https://img.shields.io/badge/uses-rich-a78bfa?style=flat-square&labelColor=0A0A0A&logo=rich&logoColor=white)](https://github.com/Textualize/rich)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-a78bfa?style=flat-square&labelColor=0A0A0A&logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json&style=flat-square&labelColor=0A0A0A&color=a78bfa)](https://github.com/j178/prek)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/demo/demo_dark.gif">
@@ -212,6 +180,38 @@ Standard git commits conflate *saving work* (High Noise) with *publishing featur
 
 ---
 
+<div align="center">
+
+<a href="https://github.com/JacksonFergusonDev/focal">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg">
+    <img alt="Focal Logo"
+         src="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg"
+         width="250"
+         style="max-width:100%; height:auto;">
+  </picture>
+</a>
+
+**CLI tool for instantly extracting token-efficient codebase context for LLM workflows.**
+
+[![Version](https://img.shields.io/github/v/release/JacksonFergusonDev/focal?style=flat-square&labelColor=0A0A0A&color=fb923c)](https://github.com/JacksonFergusonDev/focal/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/JacksonFergusonDev/focal/ci.yml?style=flat-square&color=fb923c&labelColor=0A0A0A&label=CI)](https://github.com/JacksonFergusonDev/focal/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10+-fb923c?style=flat-square&labelColor=0A0A0A&logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![Ruff](https://img.shields.io/badge/style-ruff-fb923c?style=flat-square&labelColor=0A0A0A)](https://github.com/astral-sh/ruff)
+[![Mypy](https://img.shields.io/badge/mypy-checked-fb923c?style=flat-square&labelColor=0A0A0A)](https://mypy-lang.org/)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json&style=flat-square&labelColor=0A0A0A&color=fb923c)](https://github.com/j178/prek)
+
+</div>
+
+Gathering context for an LLM usually means copying and pasting multiple files, scraping git diffs, and manually formatting terminal outputs. Focal automates this boilerplate repository extraction, feeding AI assistants exactly what they need to understand codebases, PR intents, or external documentation.
+
+* **Pipeline Native:** Core routing and file manipulation are handled by fast UNIX utilities (`rg`, `fd`, `fzf`, `bat`), strictly reserving the Python backend for complex data transformations like parsing Jupyter Notebook ASTs, resolving Git commit topologies, or stripping HTML structure.
+* **High Signal, Low Noise:** Aggressively filters out binary blobs, lockfiles, minified assets, and DOM noise using strict heuristic sets to maximize LLM attention window efficiency.
+* **Clipboard-First Execution:** Outputs are automatically calculated for token length and piped directly to your system's native clipboard manager (`pbcopy`, `wl-copy`, `xclip`). No intermediate files; just run the command and paste.
+
+---
+
 ## Infrastructure & DevOps
 
 <div align="center">
@@ -224,7 +224,7 @@ Standard git commits conflate *saving work* (High Noise) with *publishing featur
 [![Python](https://img.shields.io/badge/python-3.14+-white?style=flat-square&color=white&labelColor=black)](https://www.python.org/downloads/)
 [![Ruff](https://img.shields.io/badge/style-ruff-white?style=flat-square&color=white&labelColor=black)](https://github.com/astral-sh/ruff)
 [![Mypy](https://img.shields.io/badge/mypy-checked-white?style=flat-square&color=white&labelColor=black)](https://mypy-lang.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-white?style=flat-square&color=white&labelColor=black)](https://github.com/pre-commit/pre-commit)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json&style=flat-square&color=white&labelColor=black)](https://github.com/j178/prek)
 
 </div>
 
