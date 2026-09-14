@@ -172,7 +172,7 @@ Software package managers make dependency resolution deterministic; physical pro
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/assets/readme-light.svg">
     <img alt="Git Pulsar Logo"
          src="https://raw.githubusercontent.com/JacksonFergusonDev/git-pulsar/refs/heads/main/assets/readme-light.svg"
-         width="350"
+         width="320"
          style="max-width:100%; height:auto;">
   </picture>
 </a>
@@ -204,7 +204,38 @@ Git's normal commit workflow makes one history serve two different purposes: rec
 
 - **Distributed reconciliation:** State captured independently across multiple machines is reconciled through a "Zipper Graph" rather than allowing separate recovery histories to diverge into split-brain state.
 
-- **Design goal:** Recovery checkpoints can be frequent and noisy without forcing the permanent Git history to become frequent and noisy as well.
+---
+
+<div align="center">
+
+<a href="https://github.com/JacksonFergusonDev/dark-matter">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/dark-matter/refs/heads/main/assets/readme-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/dark-matter/refs/heads/main/assets/readme-light.svg">
+    <img alt="Dark Matter Logo"
+         src="https://raw.githubusercontent.com/JacksonFergusonDev/dark-matter/refs/heads/main/assets/readme-light.svg"
+         width="360"
+         style="max-width:100%; height:auto;">
+  </picture>
+</a>
+
+**Dependency-graph-aware storage analysis for Homebrew**
+
+[![PyPI Version](https://img.shields.io/pypi/v/dark-matter-cli?style=flat-square&color=94a3b8&labelColor=0A0A0A&logo=pypi&logoColor=94a3b8)](https://pypi.org/project/dark-matter-cli/)
+[![CI](https://img.shields.io/github/actions/workflow/status/JacksonFergusonDev/dark-matter/ci.yml?style=flat-square&color=94a3b8&labelColor=0A0A0A&label=CI)](https://github.com/JacksonFergusonDev/dark-matter/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.12+-94a3b8?style=flat-square&labelColor=0A0A0A)](https://www.python.org/downloads/)
+[![Ruff](https://img.shields.io/badge/style-ruff-94a3b8?style=flat-square&labelColor=0A0A0A)](https://github.com/astral-sh/ruff)
+[![Mypy](https://img.shields.io/badge/mypy-checked-94a3b8?style=flat-square&labelColor=0A0A0A)](https://mypy-lang.org/)
+
+</div>
+
+Homebrew exposes package sizes and dependency metadata, but neither alone answers what an explicitly installed package actually costs once shared infrastructure is accounted for. Dark Matter reconstructs the dependency DAG and attributes transitive storage costs across the packages that share them.
+
+- **Graph-aware attribution:** Computes both direct package size and weighted recursive size, fractionally allocating shared dependencies rather than charging their full footprint to every parent. The resulting **Bloat Ratio** distinguishes self-contained tools from small packages that pull in disproportionately large dependency trees.
+
+- **Measurement semantics:** Separates physical analysis of installed Cellar contents from theoretical analysis of Homebrew's catalog. Theoretical modes use compressed bottle sizes, so absolute values are treated as estimates while relative ratios remain the useful comparison—an explicit limitation rather than hidden measurement error.
+
+- **Targeted and ecosystem-scale analysis:** Supports full-catalog leaderboards alongside `inspect`, `compare`, and `explain` paths for individual packages, plus CSV/JSON export for downstream analysis.
 
 ---
 
@@ -216,7 +247,7 @@ Git's normal commit workflow makes one history serve two different purposes: rec
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg">
     <img alt="Focal Logo"
          src="https://raw.githubusercontent.com/JacksonFergusonDev/focal/refs/heads/main/assets/readme-light.svg"
-         width="250"
+         width="220"
          style="max-width:100%; height:auto;">
   </picture>
 </a>
