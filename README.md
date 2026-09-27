@@ -19,7 +19,7 @@ Physics & Astronomy graduate focused on building reliable technical systems acro
 
 <div align="center">
 
-<a href="https://protostar.readthedocs.io/stable/">
+<a href="https://protostar.jacksonferguson.me/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/readme-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/readme-light.svg">
@@ -37,9 +37,9 @@ Physics & Astronomy graduate focused on building reliable technical systems acro
 [![Release](https://img.shields.io/github/actions/workflow/status/jacksonfergusondev/protostar/release.yml?color=22d3ee&labelColor=0A0A0A&label=release)](https://github.com/jacksonfergusondev/protostar/actions/workflows/release.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/JacksonFergusonDev/protostar?color=22d3ee&labelColor=0A0A0A&logo=codecov&logoColor=white)](https://codecov.io/gh/JacksonFergusonDev/protostar)
 [![Python](https://img.shields.io/badge/python-3.12+-22d3ee?labelColor=0A0A0A&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![Documentation](https://img.shields.io/readthedocs/protostar/stable?color=22d3ee&labelColor=0A0A0A&logo=readthedocs&logoColor=white)](https://protostar.readthedocs.io/stable/)
+[![Documentation](https://img.shields.io/badge/docs-gh--pages-22d3ee?labelColor=0A0A0A&logo=github&logoColor=white)](https://protostar.jacksonferguson.me/)
 
-<a href="https://protostar.readthedocs.io/stable/">
+<a href="https://protostar.jacksonferguson.me/">
   <img alt="Protostar Headless Demo"
         src="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/demo_headless.gif"
         width="800"
