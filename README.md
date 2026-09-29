@@ -40,9 +40,9 @@ Physics & Astronomy graduate focused on building reliable technical systems acro
 [![Documentation](https://img.shields.io/badge/docs-gh--pages-22d3ee?labelColor=0A0A0A&logo=github&logoColor=white)](https://protostar.jacksonferguson.me/)
 
 <a href="https://protostar.jacksonferguson.me/">
-  <img alt="Protostar Headless Demo"
-        src="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/demo_headless.gif"
-        width="800"
+  <img alt="Protostar Init Interactive Demo"
+        src="https://raw.githubusercontent.com/JacksonFergusonDev/protostar/refs/heads/main/docs/assets/demo_init_interactive.gif"
+        width="650"
         style="max-width:100%; height:auto;">
 </a>
 
