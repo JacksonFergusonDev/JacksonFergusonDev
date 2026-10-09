@@ -1,15 +1,12 @@
 default_install_hook_types:
   - pre-commit
   - commit-msg
-  - pre-push
 
 default_stages:
   - pre-commit
 
-fail_fast: true
-
 repos:
-  # Generic hooks (configured to IGNORE Python)
+  # Generic hooks
   - repo: builtin
     hooks:
       - id: check-added-large-files
@@ -35,7 +32,7 @@ repos:
 
   # Markdown linting
   - repo: https://github.com/rvben/rumdl-pre-commit
-    rev: v0.2.73
+    rev: v0.2.79
     hooks:
       - id: rumdl
         args: [--fix]
